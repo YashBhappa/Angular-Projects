@@ -1,0 +1,428 @@
+fieldset#search {
+    background: #F1F1F1;
+    border: 0 none;
+    width: 110.25%;
+    border-bottom: 1px solid #CCC;
+}
+.inline {
+    display:flex;
+    }
+.left{
+    display:flex;
+    float: left;
+    margin-right: 133px;
+}
+.right{
+    display:flex;
+    float: left;
+} 
+
+#search #buttonBar .firstRight{
+	width:auto;
+	float:right;
+	margin-left:2px;
+	text-align:left;
+}
+
+#search #buttonBar .nextRight {
+	width:auto;
+	margin-right:20px;
+	float:right;
+	text-align:left;
+}
+
+table {
+    width: 100%;
+}
+
+#main {
+	width: 1219px;
+    float: left;
+    text-align: left;
+    margin-left: -97px;
+}
+
+#mainMargin {
+	margin-left:125px;
+}
+
+.menu {
+    overflow: hidden;
+    background: var(--firstColor);
+    font-size: 16px;
+    max-width: 179px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: -38px;
+}
+
+.menu a {
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    padding-left: 15px;
+}
+
+#mainContainer {
+    float: left;
+    margin: 0;
+    width: 96%;
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.menu a:hover {
+    background: var(--secondColor);
+}
+
+.leftIcon{
+    margin-right: 9px;
+}
+
+#mainBanner {
+    border-bottom: 2px solid #FFFFFF;
+    color: #FFFFFF;
+    padding-top: 2px ;
+    width: 112%;
+    background:var(--firstColor);
+    margin: 40px 0 0 2px;
+    height: 26.59px;
+    float: left;
+}
+#mainBanner h3{
+    float: left;
+	margin:0;
+    font-size: 0.9em;
+    font-weight: normal;
+    padding-left: 8px;
+    text-align: left;
+    width: 50%;
+}
+
+#mainBanner p {
+	margin:0;
+	float:right;
+}
+
+#mainBanner p span  {
+    width: 28px;
+    height: 28px;
+    float: left;
+    margin: -2px 0px 0px 0px;
+    padding: 2px 0px 0px 4px;
+}
+
+#mainBanner p span.expand{
+    background:  #F1F1F1;
+    cursor: pointer;
+    color: var(--firstColor);
+}
+
+#mainBanner p span.expand:hover {
+	background:  #DDDDDD;
+}
+
+.mat-table {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    border-spacing: 10px;
+    margin-left: 1.5px;
+}
+#flights .mat-header-cell {
+    color: #000;
+    text-decoration: underline;
+    font-weight: bold;
+    border-bottom: 1px solid #DADADA;
+    border-right: 1px solid #DADADA;
+}
+
+#flights .mat-table .mat-header-row {
+	background:url("../src/assets/imgs/thBackground.gif") #CCC;
+    height: fit-content;
+}
+
+td:not(.mat-calendar-body-cell):not(.mat-calendar-body-label) {
+    border-right: 1px solid
+    #DADADA;
+    font-size: 0.9em;
+    text-align: center;
+}
+#flights td{
+    line-height:0.9;
+}
+#flights .mat-row:hover {  
+    background-color:#F7DEBE;
+} 
+#flights tr:nth-child(even),#result tr:nth-child(even) {
+    background:var(--fourthColor)
+}
+TABLE.table TR:nth-child(even) {
+    background:var(--fourthColor)
+}
+table {
+    width: 111.979%;
+}
+#flights .mat-cell{
+    padding-left: 1px;
+    padding-right: 1px;
+}
+.mat-elevation-z8{
+    box-shadow: unset;
+}
+.paginator{
+    float: left;
+ }
+
+#flights .mat-cell:first-of-type, #flights .mat-header-cell:first-of-type {
+    border-left: 1px solid #DADADA;
+}
+
+#footer {
+	display : table-row;
+    width: 100%;
+    position: absolute; bottom: 0;
+}
+
+body {
+	display : table;   
+    width: 100%;
+    position: relative;
+}
+
+#footer .mat-toolbar span {
+    font-family: Arial,Helvetica,Sans-serif;
+    font-size: 0.65em;
+    margin-top: 10px;
+}
+
+#Lang .mat-select{
+    width: 45%;
+}
+#Lang .mat-form-field{
+    text-align: center;
+}
+#Lang {
+    text-align: center;
+    width: 13%;
+    margin-bottom: -30px;
+    font-size: small;
+}
+#loader{
+    text-align:center;
+}
+#loader img{
+    width: 9%;   
+    margin:auto;
+}
+.mat-spinner {
+    position: relative;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+DIV.table{
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+TABLE.table td{
+    border-left: 1px solid #DDD;
+    border-bottom: 1px solid #DADADA;
+}
+TABLE.table TR th,#result th{
+    border-top: 1px solid #DADADA;
+    border-right: 1px solid #DADADA;
+    border-bottom: 1px solid #DADADA;
+background: url("../src/assets/imgs/thBackground.gif") 
+#CCC; 
+font-size: 0.8em;
+text-align: center;
+}
+TABLE.table {
+    border-collapse: collapse;
+    margin-left: 2px;
+}
+DIV.table {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+#buttonListBar .firstLeft{
+	width:auto;
+    margin-right:2px;
+    margin-left: 3px;
+	float:left;
+	text-align:left;
+}
+#buttonListBar .firstRight{
+	width:auto;
+	float:right;
+    margin-left:2px;
+    margin-right: -147px;
+	text-align:left;
+}
+
+#buttonListBar .nextRight {
+	width:auto;
+	margin-right:20px;
+	float:right;
+	text-align:left;
+}
+
+#buttonListBar button:hover{
+    background-color:#F90;
+    color: #fff;
+}
+#flights .mat-cell a{
+	width:20px;
+	height:20px;
+    color: var(--firstColor);
+    cursor: pointer;
+    margin: -4px 7px 0 9px;
+}
+#flights .mat-cell a:hover {
+    color:  #F90;
+    cursor: pointer;
+}
+td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:last-of-type {
+    width: 1px;
+}
+#details{
+    display: flex;
+}
+.mat-dialog-container .mat-icon {
+    color: var(--firstColor);
+}
+.blue-snackbar {
+    background: var(--firstColor);
+    color: white !important;
+    border-radius: 8px !important;
+    min-width: fit-content !important;
+    min-height: 20px !important;
+}
+#cabinDetails TABLE.table td{
+    text-align: left;
+    padding: 0px 0px 0px 1.6px;
+}
+
+#flightsInfo #mainBanner{
+    margin: 24px 0 0 2px;
+}
+
+#action #buttonBar{
+    background-color: var(--fourthColor);
+    margin: 38px 0px 0px 3px;
+    padding: 48px 0px 61px 0px;
+    width: 1364px;
+    height: 37px;
+}
+
+#action #buttonBar .firstLeft{
+	width:auto;
+	margin-right:-15px;
+	float:left;
+    text-align:left;
+    margin-top: -20px;
+}
+
+#action #buttonBar .nextLeft {
+	width:auto;
+	margin-left:20px;
+	float:left;
+    text-align:left;
+    margin-top: -20px;
+}
+
+#action #buttonBar #firstLeft button{
+    width: 15.22%;
+    margin: -10px 0px 15px 0px;
+}
+
+#action #mainBanner{
+    margin: 0px 0 0 2px;
+}
+
+#action #buttonBar  button{
+    height: 40px;
+}
+
+#view button{
+    width: auto;
+    height: 60px;
+    font-size: large;
+    font-weight: 400;
+    text-align:center;
+    margin: auto;
+    margin: 30px 0px 0px 550px;  
+}
+
+.cards {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-flow: column;
+    grid-auto-columns: 448px;
+    position :relative;
+}
+
+.fullscreen{
+    position: absolute;
+    width: 200%;
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 999;
+}
+.matcard {
+    display: grid;
+    grid-auto-columns: 448px;  
+    margin: 26px 0 0 571px;
+    text-align: center;
+}
+
+#login.mat-form-field {
+    width: 100%;
+    min-width: 300px;
+}
+
+#login mat-card-title, #login mat-card-content {
+    display: flex;
+    justify-content: center;
+}
+
+#titbar {
+    background: var(--thirdColor);
+	padding:5px 0;
+    margin-top:2px;
+}
+
+#titbar h2{
+    font-family: Arial,Helvetica,Sans-serif;
+    padding-left: 10px;
+	margin:0;
+}
+
+#tools {
+    text-align: right;
+    margin: 1px 6px -10px 0px;
+    padding-right: 20px
+}
+
+#tools a{
+    font-size: 0.9em;
+    color: #666;
+    background: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.mat-toolbar.mat-primary {
+    background: var(--firstColor) !important;
+}
+
+.mat-raised-button.mat-primary {
+    background: var(--firstColor) !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+    --firstColor: #3f51b5;    
+    --secondColor: #336EFF; 
+    --thirdColor: #B2CDD7; 
+    --fourthColor: #EAF9FF;
+} 

@@ -1,0 +1,22 @@
+<div id="action">
+    <div id="mainBanner">
+        <h3>{{'DetailsPage.action.header' | translate }}</h3>
+    </div>
+    <div id="buttonBar">
+        <p id="firstLeft">
+            <button mat-raised-button color="primary" (click)="backToList()">
+                <mat-icon>fast_rewind</mat-icon> {{'DetailsPage.back.button' | translate }}
+            </button>
+        </p>
+        <p class="firstLeft">
+            <button [ngStyle]="{'display':hidePrevious ? 'none':'inherit'}" mat-raised-button color="primary" (click)="previousPage()">
+                <mat-icon>skip_previous</mat-icon> {{'DetailsPage.previous.button' | translate }}
+            </button>
+        </p>
+        <p class="nextLeft">
+            <button [ngStyle]="{'display':hideNext ? 'none':'inherit'}" mat-raised-button color="primary" (click)="nextPage()">
+                <mat-icon>skip_next</mat-icon> {{'DetailsPage.next.button' | translate }}
+            </button>
+        </p>      
+    </div>
+</div>   

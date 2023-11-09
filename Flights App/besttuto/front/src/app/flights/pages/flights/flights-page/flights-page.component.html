@@ -1,0 +1,35 @@
+<app-top-right-side></app-top-right-side>
+<app-top-side [title]="title" [icon]="icon"></app-top-side>
+<div id="mainContainer">
+    <app-left-side></app-left-side>
+    <div id="mainMargin">
+        <div id="main">
+            <div id="mainBanner">
+                <h3>{{'searchFlightForm.header.label' | translate }}</h3>
+                <p>
+                    <span class="expand" (click)="hideSearchForm()">
+                        <mat-icon *ngIf="isHiddenSearch">expand_more</mat-icon>
+                        <mat-icon *ngIf="!isHiddenSearch">expand_less</mat-icon>
+                    </span>
+                </p>
+            </div>
+            <div [ngStyle]="{'display':isHiddenSearch ? 'none':'inherit'}">
+                <app-search-form (onSearch)="searchFlights($event)"></app-search-form>
+            </div>
+            <div *ngIf="loading" id="loader">
+                <mat-spinner></mat-spinner>
+            </div>
+            <div *ngIf="show && !loading" id="mainBanner">
+                <h3>{{'flightsList.searchResult.label' | translate }}</h3>
+            </div>
+            <div *ngIf="show">
+                <app-flight-search-summary [nbFlights]="nbFlights" *ngIf="!loading">
+                </app-flight-search-summary>
+            </div>
+            <div *ngIf="show">
+                <app-flights-list *ngIf="!loading" [flights]="flightsData" (bookmarkTitle)="addBookmark($event)"></app-flights-list>
+            </div>
+        </div>
+    </div>  
+</div>
+<app-bot-side></app-bot-side>

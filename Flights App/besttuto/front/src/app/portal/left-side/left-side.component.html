@@ -1,0 +1,51 @@
+<div id="leftSide">
+    <div id="Lang" [formGroup]="language">
+        <mat-form-field>
+            <mat-label>Language</mat-label>
+            <mat-select (selectionChange)="changeLang($event.value)" formControlName="language">
+                <mat-option *ngFor="let lang of langs" [value]="lang">
+                    {{ (lang==="fr_FR")?'French':'English' }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div id="menu">
+        <ul class="menu">
+            <li>
+                <a>
+                    <mat-icon class="leftIcon">home</mat-icon> Home
+                </a>
+            </li>
+            <li>
+                <a (click)="flightsPage()">
+                    <mat-icon class="leftIcon">flight</mat-icon> Flights
+                </a>
+            </li>
+            <li>
+                <a (click)="bookmarksPage()">
+                    <mat-icon class="leftIcon">bookmark</mat-icon> Bookmarks
+                </a>
+            </li>
+            <li>
+                <a (click)="synthesisPage()">
+                    <mat-icon class="leftIcon">pie_chart</mat-icon> Synthesis
+                </a>
+            </li>
+            <li>
+                <a>
+                    <mat-icon class="leftIcon"> contacts</mat-icon> Contact
+                </a>
+            </li>
+            <li>
+                <a>
+                    <mat-icon class="leftIcon">help</mat-icon> Help
+                </a>
+            </li>
+            <li>
+                <a (click)="logOut()">
+                    <mat-icon class="leftIcon">power_settings_new</mat-icon> Sign out
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

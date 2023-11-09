@@ -1,0 +1,37 @@
+<mat-card>
+    <mat-card-title>Sign in</mat-card-title>
+    <mat-card-content>
+        <div [formGroup]="loginForm">
+            <p>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Username *" formControlName="username">
+                    <mat-error *ngIf="username.hasError('required')">Username is required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input type="password" matInput placeholder="Password *" formControlName="password">
+                    <mat-error *ngIf="password.hasError('required')">Password is required</mat-error>
+                </mat-form-field>
+            </p>
+            <mat-error *ngIf="submitted && loginForm.invalid">Please fill in the required fields</mat-error>
+            <mat-error *ngIf="invalid">The username or password is incorrect</mat-error>
+            <br>
+            <div class="button">
+                <button type="submit" mat-raised-button color="primary" (click)="login()">Sign in</button>
+                <button mat-button (click)="cancel()">Cancel</button>
+            </div>
+            <br>
+            <p>
+                <label>Do not have an account yet ?</label>
+                <button mat-button (click)="register()">Create one!</button>
+            </p>
+            <p>
+                <button mat-button (click)="resetPassword()">{{'authPage.askforgot.label' | translate }}</button>
+            </p>
+        </div>  
+    </mat-card-content>
+    <div *ngIf="loading" id="loader">
+        <img *ngIf="loading" alt="Return to Home Page" src="../../../assets/imgs/ajax-wait.gif">
+    </div>
+</mat-card>

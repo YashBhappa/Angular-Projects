@@ -1,0 +1,247 @@
+<div [formGroup]="searchFlightForm" name="searchFlight" id="searchFlight">
+    <fieldset id="search">
+        <div class="inline">
+            <mat-form-field>
+                <mat-label>Company</mat-label>
+                <mat-select formControlName="company">
+                    <mat-option></mat-option>
+                    <mat-option *ngFor="let company of companies" [value]="company">
+                        {{ "searchFlightForm.company."+company | translate }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="inline">
+            <div class="left">
+                <mat-form-field class="left">
+                    <mat-label>Trip</mat-label>
+                    <mat-select formControlName="travelType" (selectionChange)="selectedTripType($event.value)">
+                        <mat-option></mat-option>
+                        <mat-option *ngFor="let trip of trips" [value]="trip">
+                            {{ "searchFlightForm.trip."+trip | translate }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="right">
+                    <mat-label>Flight type</mat-label>
+                    <mat-select formControlName="flightType" (selectionChange)="selectedFlightType($event.value)">
+                        <mat-option></mat-option>
+                        <mat-option *ngFor="let flightType of flightTypes" [value]="flightType">
+                            {{ "searchFlightForm.flightType."+flightType | translate }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="right">
+                <mat-form-field>
+                    <input matInput placeholder="Aircraft Type" formControlName="aircraftType">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="inline">
+            <div class="left">
+                <mat-form-field>
+                    <input matInput placeholder="Departing from" formControlName="departureLocation">
+                </mat-form-field>
+                <mat-icon>flight_takeoff</mat-icon>
+            </div>
+            <div class="right">
+                <mat-icon>flight_land</mat-icon>
+                <mat-form-field>
+                    <input matInput placeholder="Arriving at" formControlName="arrivalLocation">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="inline">
+            <div class="left">
+                <div class="left">
+                    <mat-form-field>
+                        <mat-label>Departing date min</mat-label>
+                        <input matInput [matDatepicker]="deparMin" formControlName="departureDateMin">
+                        <mat-datepicker-toggle matSuffix [for]="deparMin"></mat-datepicker-toggle>
+                        <mat-datepicker #deparMin></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="right">
+                    <mat-form-field>
+                        <mat-label>Departing date max</mat-label>
+                        <input matInput [matDatepicker]="deparMax" formControlName="departureDateMax">
+                        <mat-datepicker-toggle matSuffix [for]="deparMax"></mat-datepicker-toggle>
+                        <mat-datepicker #deparMax></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="right">
+                <div class="left">
+                    <mat-form-field>
+                        <mat-label>Departing time min</mat-label>
+                        <input matInput [ngxTimepicker]="deparTimeMin" [disableClick]="true" [format]="24" readonly
+                            formControlName="departureTimeMin">
+                    </mat-form-field>
+                    <ngx-material-timepicker-toggle [for]="deparTimeMin">
+                    </ngx-material-timepicker-toggle>
+                    <ngx-material-timepicker #deparTimeMin [theme]="timeTheme"></ngx-material-timepicker>
+                </div>
+                <div class="right">
+                    <mat-form-field>
+                        <mat-label>Departing time max</mat-label>
+                        <input matInput [ngxTimepicker]="deparTimeMax" [disableClick]="true" [format]="24" readonly
+                            formControlName="departureTimeMax">
+                    </mat-form-field>
+                    <ngx-material-timepicker-toggle [for]="deparTimeMax">
+                    </ngx-material-timepicker-toggle>
+                    <ngx-material-timepicker #deparTimeMax></ngx-material-timepicker>
+                </div>
+            </div>
+        </div>
+        <div class="inline">
+            <div class="left">
+                <div class="left">
+                    <mat-form-field>
+                        <mat-label>Arriving date min</mat-label>
+                        <input matInput [matDatepicker]="arrivMin" formControlName="arrivalDateMin">
+                        <mat-datepicker-toggle matSuffix [for]="arrivMin"></mat-datepicker-toggle>
+                        <mat-datepicker #arrivMin></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="right">
+                    <mat-form-field>
+                        <mat-label>Arriving date max</mat-label>
+                        <input matInput [matDatepicker]="arrivMax" formControlName="arrivalDateMax">
+                        <mat-datepicker-toggle matSuffix [for]="arrivMax"></mat-datepicker-toggle>
+                        <mat-datepicker #arrivMax></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="right">
+                <div class="left">
+                    <mat-form-field>
+                        <mat-label>Arriving time min</mat-label>
+                        <input matInput [ngxTimepicker]="arrivTimeMin" [disableClick]="true" [format]="24" readonly
+                            formControlName="arrivalTimeMin">
+                    </mat-form-field>
+                    <ngx-material-timepicker-toggle [for]="arrivTimeMin">
+                    </ngx-material-timepicker-toggle>
+                    <ngx-material-timepicker #arrivTimeMin></ngx-material-timepicker>
+                </div>
+                <div class="right">
+                    <mat-form-field>
+                        <mat-label>Arriving time max</mat-label>
+                        <input matInput [ngxTimepicker]="arrivTimeMax" [disableClick]="true" [format]="24" readonly
+                            formControlName="arrivalTimeMax">
+                    </mat-form-field>
+                    <ngx-material-timepicker-toggle [for]="arrivTimeMax">
+                    </ngx-material-timepicker-toggle>
+                    <ngx-material-timepicker #arrivTimeMax></ngx-material-timepicker>
+                </div>
+            </div>
+        </div>
+        <div class="inline">
+            <div class="left">
+                <div class="left">
+                    <mat-form-field>
+                        <mat-label>Flight duration min</mat-label>
+                        <input matInput [ngxTimepicker]="durationMin" [disableClick]="true" [format]="24" readonly
+                            formControlName="flightDurationMin">
+                    </mat-form-field>
+                    <ngx-material-timepicker-toggle [for]="durationMin">
+                    </ngx-material-timepicker-toggle>
+                    <ngx-material-timepicker #durationMin></ngx-material-timepicker>
+                </div>
+                <div class="right">
+                    <mat-form-field>
+                        <mat-label>Flight duration max</mat-label>
+                        <input matInput [ngxTimepicker]="durationMax" [disableClick]="true" [format]="24" readonly
+                            formControlName="flightDurationMax">
+                    </mat-form-field>
+                    <ngx-material-timepicker-toggle [for]="durationMax">
+                    </ngx-material-timepicker-toggle>
+                    <ngx-material-timepicker #durationMax></ngx-material-timepicker>
+                </div>
+            </div>
+            <div class="right">
+                <div class="left">
+                    <mat-form-field>
+                        <input matInput placeholder="Fare min" formControlName="fareMin">
+                    </mat-form-field>
+                </div>
+                <div class="right">
+                    <mat-form-field>
+                        <input matInput placeholder="Fare max" formControlName="fareMax">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="inline" [ngStyle]="{display:showBack?'flex':'none'}">
+            <div class="left">
+                <div class="left">
+                    <mat-form-field>
+                        <mat-label>Back date min</mat-label>
+                        <input matInput [matDatepicker]="backdatemin" formControlName="backDateMin">
+                        <mat-datepicker-toggle matSuffix [for]="backdatemin"></mat-datepicker-toggle>
+                        <mat-datepicker #backdatemin></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="right">
+                    <mat-form-field>
+                        <mat-label>Back date max</mat-label>
+                        <input matInput [matDatepicker]="backdatemax" formControlName="backDateMax">
+                        <mat-datepicker-toggle matSuffix [for]="backdatemax"></mat-datepicker-toggle>
+                        <mat-datepicker #backdatemax></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="right">
+                <div class="left">
+                    <mat-form-field>
+                        <mat-label>Back time min</mat-label>
+                        <input matInput [ngxTimepicker]="backtimemin" [disableClick]="true" [format]="24" readonly
+                            formControlName="backTimeMin">
+                    </mat-form-field>
+                    <ngx-material-timepicker-toggle [for]="backtimemin">
+                    </ngx-material-timepicker-toggle>
+                    <ngx-material-timepicker #backtimemin></ngx-material-timepicker>
+                </div>
+
+                <div class="right">
+                    <mat-form-field>
+                        <mat-label>Back time max</mat-label>
+                        <input matInput [ngxTimepicker]="backtimemax" [disableClick]="true" [format]="24" readonly
+                            formControlName="backTimeMax">
+                    </mat-form-field>
+                    <ngx-material-timepicker-toggle [for]="backtimemax">
+                    </ngx-material-timepicker-toggle>
+                    <ngx-material-timepicker #backtimemax></ngx-material-timepicker>
+                </div>
+            </div>
+        </div>
+        <div class="inline" [ngStyle]="{display:showConnection?'flex':'none'}">
+            <div class="left">
+                <mat-form-field>
+                    <mat-label>Connection duration min</mat-label>
+                    <input matInput [ngxTimepicker]="connectdurmin" [disableClick]="true" [format]="24" readonly
+                        formControlName="connectionDurationMin">
+                </mat-form-field>
+                <ngx-material-timepicker-toggle [for]="connectdurmin"></ngx-material-timepicker-toggle>
+                <ngx-material-timepicker #connectdurmin></ngx-material-timepicker>
+            </div>
+            <div class="right">
+                <mat-form-field>
+                    <mat-label>Connection duration max</mat-label>
+                    <input matInput [ngxTimepicker]="connectdurmax" [disableClick]="true" [format]="24" readonly
+                        formControlName="connectionDurationMax">
+                </mat-form-field>
+                <ngx-material-timepicker-toggle [for]="connectdurmax"></ngx-material-timepicker-toggle>
+                <ngx-material-timepicker #connectdurmax></ngx-material-timepicker>
+            </div>
+        </div>
+        <div id="buttonBar">
+            <p class="firstRight">
+                <button mat-raised-button color="primary" (click)="searchFlight()">
+                    <mat-icon>search</mat-icon> Find a flight
+                </button>
+            </p>
+            <p class="nextRight">
+                <button mat-raised-button (click)="resetForm(searchFlightForm)">Cancel</button>
+            </p>
+        </div>
+    </fieldset>
+</div>
